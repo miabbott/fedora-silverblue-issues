@@ -1,0 +1,27 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "comments": [],
+    "content": "I'm Alberto from the Marketing team, I'm asking for help to complete\r\nthe Fedora 29 Talking points[1].\r\n\r\nTalking points are key highlights of the new release. There are\r\ndifferent types of talking points for different types of people:\r\ngeneral desktop users/everyone, developers, and sysadmins. They are\r\nmeant to provide a short, effective answer to the question \"What cool\r\nstuff is in the latest release of Fedora?\" They are compelling, not\r\nnecessarily comprehensive.  \r\n\r\nBest Regards.\r\n\r\n[1] https://fedoraproject.org/wiki/Fedora_29_talking_points",
+    "custom_fields": [],
+    "date_created": "1537040462",
+    "depends": [],
+    "id": 1,
+    "last_updated": "1537040462",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "Fedora 29 Talking points",
+    "user": {
+        "default_email": "hotgalan@gmail.com",
+        "emails": [
+            "hotgalan@gmail.com"
+        ],
+        "fullname": "Alberto Rodriguez Sanchez",
+        "name": "bt0dotninja"
+    }
+}

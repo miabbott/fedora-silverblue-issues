@@ -1,0 +1,27 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "comments": [],
+    "content": "How about adding baobab to SIlverblue?  At least until there is a flatpak for it.\r\n\r\n(Personally I prefer the `ncdu` cli tool, but I guess baobab is GNOME and more discoverable/known. Unless can we have both?  ncdu is a lot smaller <100kB)",
+    "custom_fields": [],
+    "date_created": "1537194850",
+    "depends": [],
+    "id": 2,
+    "last_updated": "1537194850",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "add baobab to Silverblue",
+    "user": {
+        "default_email": "petersen@redhat.com",
+        "emails": [
+            "petersen@redhat.com"
+        ],
+        "fullname": "Jens Petersen",
+        "name": "petersen"
+    }
+}

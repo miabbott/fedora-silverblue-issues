@@ -3,13 +3,32 @@
     "blocks": [],
     "close_status": null,
     "closed_at": null,
-    "comments": [],
+    "comments": [
+        {
+            "comment": "Based on discussion with @walters it sounds to me more probably root cause is SOURCE_DATE_EPOCH is actually not set at all when building the source RPM's like it should so this is probably wrong place for this bug....",
+            "date_created": "1546551951",
+            "edited_on": null,
+            "editor": null,
+            "id": 548075,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "seppo.yli-olli@iki.fi",
+                "emails": [
+                    "seppo.yli-olli@iki.fi"
+                ],
+                "fullname": "Seppo Yli-Olli",
+                "name": "nanonyme"
+            }
+        }
+    ],
     "content": "Context, see https://gitlab.com/freedesktop-sdk/freedesktop-sdk/issues/554 (TLDR; Python 3.7 has hashed bytecode by default when SOURCE_DATE_EPOCH is set. It works perfectly in ostree. If pre-3.7 timestamp manipulations to bytecode are done, the bytecode breaks into a state where it's always invalid)\r\n\r\nRepro: run python3 -v\r\n\r\nyou should get output that includes stuff like\r\n```\r\n# bytecode is stale for 'encodings'\r\n# bytecode is stale for 'codecs'\r\n# bytecode is stale for 'encodings.aliases'\r\n# bytecode is stale for 'encodings.utf_8'\r\n# bytecode is stale for 'encodings.latin_1'\r\n# bytecode is stale for 'io'\r\n# bytecode is stale for 'abc'\r\n# bytecode is stale for '_bootlocale'\r\n# bytecode is stale for 'site'\r\n# bytecode is stale for 'os'\r\n# bytecode is stale for 'stat'\r\n# bytecode is stale for 'posixpath'\r\n# bytecode is stale for 'genericpath'\r\n# bytecode is stale for '_collections_abc'\r\n```",
     "custom_fields": [],
     "date_created": "1546467969",
     "depends": [],
     "id": 4,
-    "last_updated": "1546467969",
+    "last_updated": "1546551951",
     "milestone": null,
     "priority": null,
     "private": false,

@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "When I did a\r\n\r\n    ostree admin undeploy\r\n\r\nI discovered that all my boot entries were deleted for fedora-29. I have to do a\r\n\r\n    grub2-switch-to-blscfg\r\n\r\nto get them back.",
+    "custom_fields": [],
+    "date_created": "1547564313",
+    "depends": [],
+    "id": 5,
+    "last_updated": "1547564313",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "ostree admin undeploy will delete everything in /boot/loader/entries",
+    "user": {
+        "default_email": "seanmcneil3@gmail.com",
+        "emails": [
+            "seanmcneil3@gmail.com"
+        ],
+        "fullname": "Sean McNeil",
+        "name": "seanmcneil3"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "I ran into a problem after installing vagrant-libvirt (with `rpm-ostree install vagrant-libvirt`):\r\nThe service failed to start and I had to run\r\n```\r\n restorecon -Rv /etc/libvirt\r\n```\r\nin order to make it work, which yielded:\r\n```\r\nRelabeled /etc/libvirt from system_u:object_r:virt_etc_rw_t:s0 to system_u:object_r:virt_etc_t:s0\r\n```\r\nVagrant has been working fine for me after this step.\r\n\r\n@otaylor pointed me to the solution on IRC, he mentioned having encountered the issue as well. ",
+    "custom_fields": [],
+    "date_created": "1548240151",
+    "depends": [],
+    "id": 6,
+    "last_updated": "1548240151",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "SELinux relabeling required for running Vagrant/libvirt",
+    "user": {
+        "default_email": "cglombek@redhat.com",
+        "emails": [
+            "c@petersen-glombek.de",
+            "cglombek@redhat.com",
+            "christian.glombek@rwth-aachen.de"
+        ],
+        "fullname": "Christian Glombek",
+        "name": "lorbus"
+    }
+}

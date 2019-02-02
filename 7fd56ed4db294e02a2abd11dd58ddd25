@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "https://bugzilla.redhat.com/show_bug.cgi?id=1657367\r\n\r\nThe way how the rpm-ostree in silver-blue work is incompatible with\r\nalternatives. \r\n\r\nPlease fix this.",
+    "custom_fields": [],
+    "date_created": "1549118127",
+    "depends": [],
+    "id": 7,
+    "last_updated": "1549118127",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "rpm-ostree is incompatible with alternatives",
+    "user": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    }
+}

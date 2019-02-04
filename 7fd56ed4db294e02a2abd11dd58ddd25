@@ -12,7 +12,46 @@
         "fullname": "Jonathan Lebon",
         "name": "jlebon"
     },
-    "comments": [],
+    "comments": [
+        {
+            "comment": "Let's track this upstream: https://github.com/projectatomic/rpm-ostree/issues/1614.",
+            "date_created": "1549296210",
+            "edited_on": null,
+            "editor": null,
+            "id": 552102,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "jlebon@redhat.com",
+                "emails": [
+                    "jlebon@redhat.com",
+                    "jonathan@jlebon.com"
+                ],
+                "fullname": "Jonathan Lebon",
+                "name": "jlebon"
+            }
+        },
+        {
+            "comment": "**Metadata Update from @jlebon**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1549296210",
+            "edited_on": null,
+            "editor": null,
+            "id": 552103,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "jlebon@redhat.com",
+                "emails": [
+                    "jlebon@redhat.com",
+                    "jonathan@jlebon.com"
+                ],
+                "fullname": "Jonathan Lebon",
+                "name": "jlebon"
+            }
+        }
+    ],
     "content": "https://bugzilla.redhat.com/show_bug.cgi?id=1657367\r\n\r\nThe way how the rpm-ostree in silver-blue work is incompatible with\r\nalternatives. \r\n\r\nPlease fix this.",
     "custom_fields": [],
     "date_created": "1549118127",

@@ -25,11 +25,38 @@
             }
         },
         {
-            "comment": "What I determined from most of a day of looking at this is:\r\n * The plugged -> dead -> plugged transition during Switch Root is not expected (according to @zbyszek) - so the details of how it happens as described above are irrelevant.\r\n * it occurs with systemd-241 and systemd-240 for both ostree and **non-ostree** Fedora (though it only obviously causes problems for ostree systems.)\r\n * It doesn't occur with systemd-239\r\n * The logs above are missing some lines at reexec because of kernel message throttling - (I didn't know I needed printk.devkmsg=on)\r\n * the initial call to device_enumerate() after reexec finds no devices  (probably because /run/udev/tags doesn't exist?) - which is why all the devices that are deserialized get the plugged -> dead transition\r\n * the regression might plausibly be related to all the sd-device related refactoring that landed in systemd-240, but I couldn't immediately find suspect code.",
+            "comment": "What I determined from most of a day of looking at this is:\r\n\r\n * The plugged -> dead -> plugged transition during Switch Root is not expected (according to @zbyszek) - so the details of how it happens as described above are irrelevant.\r\n * it occurs with systemd-241 and systemd-240 for both ostree and **non-ostree** Fedora (though it only obviously causes problems for ostree systems.)\r\n * It doesn't occur with systemd-239\r\n * The logs above are missing some lines at reexec because of kernel message throttling - (I didn't know I needed printk.devkmsg=on)\r\n * the initial call to device_enumerate() after reexec finds no devices  (probably because /run/udev/tags doesn't exist?) - which is why all the devices that are deserialized get the plugged -> dead transition\r\n * the regression might plausibly be related to all the sd-device related refactoring that landed in systemd-240, but I couldn't immediately find suspect code.",
             "date_created": "1552521916",
+            "edited_on": "1552521926",
+            "editor": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            },
+            "id": 560212,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
+        },
+        {
+            "comment": "Filed https://github.com/systemd/systemd/issues/11997",
+            "date_created": "1552523242",
             "edited_on": null,
             "editor": null,
-            "id": 560212,
+            "id": 560238,
             "notification": false,
             "parent": null,
             "reactions": {},
@@ -49,7 +76,7 @@
     "date_created": "1552422471",
     "depends": [],
     "id": 8,
-    "last_updated": "1552521916",
+    "last_updated": "1552523242",
     "milestone": null,
     "priority": null,
     "private": false,

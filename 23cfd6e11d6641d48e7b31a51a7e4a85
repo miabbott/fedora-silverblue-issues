@@ -69,6 +69,25 @@
                 "fullname": "Owen Taylor",
                 "name": "otaylor"
             }
+        },
+        {
+            "comment": "Yu Watanabe submitted a pull upstream to fix the reported issue - https://github.com/systemd/systemd/pull/12013 - I rebuilt the F30 systemd package with that patch set and layered that on my system with `rpm-ostree override replace; rpm-ostree initramfs --enable` and the issue seems resolved.\r\n\r\n@zbyszek - it would be great to have a backport of this in our systemd packages once it lands upstream - I don't know how widespread these problems are going to be, but I'm certainly not the only person using ostree on top of LUKS.\r\n\r\n\r\n",
+            "date_created": "1553109745",
+            "edited_on": null,
+            "editor": null,
+            "id": 561769,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
         }
     ],
     "content": "I updated my laptop to Fedora Silverblue 30 today, and it boots up successfully about half the time - the other half of the time falling back to the systemd recovery prompt. The basic symptom of the failure at that /sysroot and /var fail to mount, but the actual point of divergence between a successful and failed boot seems to occur a bit earlier.\r\n\r\nAs much as I could determine, during the switch root from initrd to the main system, there's a point where systemd sees *all* devices going away:\r\n\r\n```\r\n systemd[1]: Invoking unit catchup() handlers\u2026\r\n systemd[1]:  sys-devices-platform-serial8250-tty-ttyS2.device: Changed plugged -> dead\r\n [... many more ...]\r\n```\r\n\r\nWhen things succeed, the LUKS device goes away first, *then* systemd sees the underlying partition going away, adds \"stop the LUKS device\" to the list of tasks, and \"stop the bind mounts from the LUKS device\" to the list of tasks, realizes that the the LUKS device was already stopped (stopping the LUKS device is \"redundant\"), and unwinds the bind mounts (usr.mount, sysroot.mount) as well.\r\n\r\n```\r\nsystemd[1]: dev-mapper-luks<partuuid>.device: Changed plugged -> dead\r\nsystemd[1]: dev-disk-by\\x2did-dm\\x2dname\\x2dluks<partuuid>.device: Changed plugged -> dead\r\nsystemd[1]: systemd-cryptsetup@luks<partuuid>.service: Trying to enqueue job systemd-cryptsetup@luks<partuuid>.service/stop/replace\r\nsystemd[1]: Added job systemd-cryptsetup@luks<partuuid>.service/stop to transaction.\r\nsystemd[1]: Pulling in dev-mapper-luks<partuuid>.device/stop from systemd-cryptsetup@luks<partuuid>.service/stop\r\nsystemd[1]: Added job dev-mapper-luks<partuuid>.device/stop to transaction.\r\nsystemd[1]: Pulling in sysroot.mount/stop from dev-mapper-luks<partuuid>.device/stop\r\nsystemd[1]: Added job sysroot.mount/stop to transaction.\r\nsystemd[1]: Pulling in usr.mount/stop from dev-mapper-luks<partuuid>.device/stop\r\nsystemd[1]: Added job usr.mount/stop to transaction.\r\nsystemd[1]: Found redundant job dev-mapper-luks<partuuid>.device/stop, dropping from transaction.\r\nsystemd[1]: Garbage collecting job usr.mount/stop\r\nsystemd[1]: Garbage collecting job sysroot.mount/stop\r\n```\r\n\r\nBut when things fail, systemd first sees the underlying partitions going away, and before it sees the luks device going away, adds jobs to unmount the /usr and /sysroot bind mounts.\r\n\r\n```\r\nsystemd[1]: Invoking unit catchup() handlers\u2026\r\nsystemd[1]: dev-sda2.device: Changed plugged -> dead\r\nsystemd[1]: dev-disk-by\\x2duuid-d3147813\\x2dbee2\\x2d4914\\x2da8ff\\x2d6768fb5822f3.device: Changed plugged -> dead\r\nsystemd[1]: systemd-cryptsetup@luks<partuuid>.service: Trying to enqueue job systemd-cryptsetup@luks<partuuid>.service/stop/replace\r\nsystemd[1]: Added job systemd-cryptsetup@luks<partuuid>.service/stop to transaction.\r\nsystemd[1]: Pulling in dev-mapper-luks<partuuid>.device/stop from systemd-cryptsetup@luks<partuuid>.service/stop\r\nsystemd[1]: Added job dev-mapper-luks<partuuid>.device/stop to transaction.\r\nsystemd[1]: Pulling in usr.mount/stop from dev-mapper-luks<partuuid>.device/stop\r\nsystemd[1]: Added job usr.mount/stop to transaction.\r\nsystemd[1]: Pulling in sysroot.mount/stop from dev-mapper-luks<partuuid>.device/stop\r\nsystemd[1]: Added job sysroot.mount/stop to transaction.\r\nsystemd[1]: Pulling in cryptsetup.target/stop from systemd-cryptsetup@luks<partuuid>.service/stop\r\nsystemd[1]: Keeping job usr.mount/stop because of dev-mapper-luks<partuuid>.device/stop\r\nsystemd[1]: Keeping job sysroot.mount/stop because of dev-mapper-luks<partuuid>.device/stop\r\nsystemd[1]: Keeping job dev-mapper-luks<partuuid>.device/stop because of systemd-cryptsetup@luks<partuuid>.service/stop\r\nsystemd[1]: usr.mount: Installed new job usr.mount/stop as 188\r\nsystemd[1]: sysroot.mount: Installed new job sysroot.mount/stop as 189\r\nsystemd[1]: systemd-cryptsetup@luks<partuuid>.service: Installed new job systemd-cryptsetup@luks<partuuid>.service/stop as 186\r\nsystemd[1]: dev-mapper-luks<partuid>.device: Installed new job dev-mapper-luks<partuuid>.device/stop as 187\r\n```\r\n\r\nbut only sees the LUKS device going later:\r\n\r\n```\r\nsystemd[1]:  dev-mapper-luks<partuuid>: Changed plugged -> dead\r\nsystemd[1]: dev-mapper-luks<partuuid>.device: Job 187 dev-mapper-luks<partuuid>.device/stop finished, result=done\r\nsystemd[1]: Stopped /dev/mapper/luks-<partuuid>.\r\n```\r\n\r\nso the unmount of /usr runs and fails:\r\n\r\n```\r\numount[672]: umount: /usr: target is busy.\r\nsystemd[1]: usr.mount: Mount process exited, code=exited, status=32/n/a\r\nsystemd[1]: Failed unmounting /usr.\r\n```\r\n\r\nand that cascades to the final failure. I'll attach the full logs as well - it's possible that the above is a red herring - it seemed to be repeatedly the first significant looking divergence between a successful and failed build - but that could be coincidence or it could be this is a symptom of the real problem.\r\n\r\n@zbyszek @walters - any ideas why this would have started happening?",
@@ -76,7 +95,7 @@
     "date_created": "1552422471",
     "depends": [],
     "id": 8,
-    "last_updated": "1552523242",
+    "last_updated": "1553109745",
     "milestone": null,
     "priority": null,
     "private": false,

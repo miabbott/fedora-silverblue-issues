@@ -4,13 +4,33 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
-    "content": "The key line in `/etc/ostree/remotes.d/fedora-workstation.conf` in Fedora 29 should be changed to `pgkeypath=/etc/pki/rpm-gpg/` so rebasing to the upcoming Fedora 30 works.",
+    "comments": [
+        {
+            "comment": "This will be fixed by https://pagure.io/workstation-ostree-config/pull-request/143. It introduces a new `fedora` remote that contains the optimal settings.\r\n\r\nOnce that PR merges, you should be able to update and then `rebase fedora:...`. Though you can of course add the remote manually today too (see https://src.fedoraproject.org/rpms/fedora-repos/pull-request/33#request_diff).",
+            "date_created": "1554124349",
+            "edited_on": null,
+            "editor": null,
+            "id": 563629,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "jlebon@redhat.com",
+                "emails": [
+                    "jlebon@redhat.com",
+                    "jonathan@jlebon.com"
+                ],
+                "fullname": "Jonathan Lebon",
+                "name": "jlebon"
+            }
+        }
+    ],
+    "content": "The key line in `/etc/ostree/remotes.d/fedora-workstation.conf` in Fedora 29 should be changed to `gpgkeypath=/etc/pki/rpm-gpg/` so rebasing to the upcoming Fedora 30 works.",
     "custom_fields": [],
     "date_created": "1554068561",
     "depends": [],
     "id": 10,
-    "last_updated": "1554068561",
+    "last_updated": "1554124349",
     "milestone": null,
     "priority": null,
     "private": false,

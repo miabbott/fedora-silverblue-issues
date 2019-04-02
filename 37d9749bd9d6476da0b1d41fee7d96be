@@ -4,13 +4,33 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
+    "comments": [
+        {
+            "comment": "Can you look in `coredumpctl` for a crash and file an issue against rpm-ostree?",
+            "date_created": "1554246471",
+            "edited_on": null,
+            "editor": null,
+            "id": 564054,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "walters@fedoraproject.org",
+                "emails": [
+                    "walters@fedoraproject.org",
+                    "walters@redhat.com"
+                ],
+                "fullname": "Colin Walters",
+                "name": "walters"
+            }
+        }
+    ],
     "content": "**Specs**\r\nFedora Silverblue 30\r\n\r\n**Error**\r\n```\r\n$ rpm-ostree upgrade\r\nReceiving objects: 10% (142/1368) 371.9\u00a0kB/s 5.6\u00a0MB... done\r\nerror: Bus owner changed, aborting.\r\n```\r\n**Workaround**\r\nSince ostree saves the downloaded files you can just keep running the command until all files are downloaded.",
     "custom_fields": [],
     "date_created": "1554242968",
     "depends": [],
     "id": 11,
-    "last_updated": "1554242968",
+    "last_updated": "1554246471",
     "milestone": null,
     "priority": null,
     "private": false,

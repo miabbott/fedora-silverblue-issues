@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "**Specs**\r\nFedora Silverblue 30\r\n\r\n**Error**\r\n```\r\n$ rpm-ostree upgrade\r\nReceiving objects: 10% (142/1368) 371.9\u00a0kB/s 5.6\u00a0MB... done\r\nerror: Bus owner changed, aborting.\r\n```\r\n**Workaround**\r\nSince ostree saves the downloaded files you can just keep running the command until all files are downloaded.",
+    "custom_fields": [],
+    "date_created": "1554242968",
+    "depends": [],
+    "id": 11,
+    "last_updated": "1554242968",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "Issue using rpm-ostree to upgrade [Fedora 30]",
+    "user": {
+        "default_email": "pattyn586@pm.me",
+        "emails": [
+            "pattyn586@pm.me"
+        ],
+        "fullname": "Alex Pattyn",
+        "name": "bproj"
+    }
+}

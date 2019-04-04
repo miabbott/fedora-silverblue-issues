@@ -22,6 +22,24 @@
                 "fullname": "Alex Pattyn",
                 "name": "bproj"
             }
+        },
+        {
+            "comment": "Yes. Now I have also learned that. But also toolbox gives only errors.\r\n\r\nhttps://github.com/debarshiray/toolbox/issues/96\r\n",
+            "date_created": "1554399404",
+            "edited_on": null,
+            "editor": null,
+            "id": 564508,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "I tried to follow this article in order to create a toolbox.\r\n\r\nhttps://medium.com/@alex285/fedora-toolbox-on-silverblue-29-first-impressions-ce898b1b6b01\r\n\r\nThis is the result:\r\n\r\n[fansari@bat ~]$ fedora-toolbox \r\n/usr/bin/fedora-toolbox: missing command\r\nTry '/usr/bin/fedora-toolbox --help' for more information.\r\n[fansari@bat ~]$ fedora-toolbox -v create\r\n/usr/bin/fedora-toolbox: checking if image fedora-toolbox-fansari:29 already exists\r\n/usr/bin/fedora-toolbox: checking if container fedora-toolbox-fansari:29 already exists\r\nError: error looking up container \"fedora-toolbox-fansari:29\": no container with name or ID fedora-toolbox-fansari:29 found: no such container\r\n/usr/bin/fedora-toolbox: trying to create container fedora-toolbox-fansari:29\r\nTrying to pull docker.io/library/fedora-toolbox-fansari:29...Failed\r\nTrying to pull registry.fedoraproject.org/fedora-toolbox-fansari:29...Failed\r\nTrying to pull quay.io/fedora-toolbox-fansari:29...Failed\r\nTrying to pull registry.access.redhat.com/fedora-toolbox-fansari:29...Failed\r\nTrying to pull registry.centos.org/fedora-toolbox-fansari:29...Failed\r\nError: unable to pull fedora-toolbox-fansari:29: 5 errors occurred:\r\n        * Error determining manifest MIME type for docker://fedora-toolbox-fansari:29: Error reading manifest 29 in docker.io/library/fedora-toolbox-fansari: errors:\r\ndenied: requested access to the resource is denied\r\nunauthorized: authentication required\r\n\r\n        * Error determining manifest MIME type for docker://registry.fedoraproject.org/fedora-toolbox-fansari:29: Error reading manifest 29 in registry.fedoraproject.org/fedora-toolbox-fansari: manifest unknown: manifest unknown\r\n        * Error determining manifest MIME type for docker://quay.io/fedora-toolbox-fansari:29: Error reading manifest 29 in quay.io/fedora-toolbox-fansari: error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: \"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 3.2 Final//EN\\\">\\n<title>404 Not Found</title>\\n<h1>Not Found</h1>\\n<p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>\\n\"\r\n        * Error determining manifest MIME type for docker://registry.access.redhat.com/fedora-toolbox-fansari:29: Error reading manifest 29 in registry.access.redhat.com/fedora-toolbox-fansari: unknown: Not Found\r\n        * Error determining manifest MIME type for docker://registry.centos.org/fedora-toolbox-fansari:29: Error reading manifest 29 in registry.centos.org/fedora-toolbox-fansari: manifest unknown: manifest unknown\r\n\r\n\r\n/usr/bin/fedora-toolbox: failed to create container fedora-toolbox-fansari:29\r\n",
@@ -29,7 +47,7 @@
     "date_created": "1553882374",
     "depends": [],
     "id": 9,
-    "last_updated": "1554243059",
+    "last_updated": "1554399404",
     "milestone": null,
     "priority": null,
     "private": false,

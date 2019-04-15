@@ -4,13 +4,32 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
-    "content": "I have an issue with Fedora Silverblue 29. \r\n\r\nRootless containers are preventing from starting by SELinux.\r\n\r\nThe problem started after I formatted the volume with xfs - with btrfs I did not have this issue.\r\n\r\nWhen I do\r\n\r\n```\r\nsetsebool -P virt_sandbox_use_fusefs on\r\n```\r\nthe issue is fixed. But after a reboot this change is gone.\r\n\r\nHow can I fix this permanently (without any local oneshot systemd hack)?",
+    "comments": [
+        {
+            "comment": "I want to add: when I run the setsebool command I get these messages:\r\n\r\n```\r\nlibsepol.context_from_record: type pcp_plugin_exec_t is not defined\r\nlibsepol.context_from_record: could not create context structure\r\nlibsepol.context_from_string: could not create context structure\r\nlibsepol.sepol_context_to_sid: could not convert system_u:object_r:pcp_plugin_exec_t:s0 to sid\r\ninvalid context system_u:object_r:pcp_plugin_exec_t:s0\r\n```\r\n",
+            "date_created": "1555351097",
+            "edited_on": null,
+            "editor": null,
+            "id": 566173,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
+        }
+    ],
+    "content": "I have an issue with Fedora Silverblue 29. \r\n\r\nRootless containers are preventing from starting by SELinux.\r\n\r\nThe problem started after I formatted the volume where I put my containers with xfs . With btrfs I did not have this issue (but I am not sure whether the file systems is really the problem or this might be a coincidence).\r\n\r\nWhen I do\r\n\r\n```\r\nsetsebool -P virt_sandbox_use_fusefs on\r\n```\r\nthe issue is fixed. But after a reboot this change is gone.\r\n\r\nHow can I fix this permanently (without any local oneshot systemd hack)?",
     "custom_fields": [],
     "date_created": "1555253804",
     "depends": [],
     "id": 12,
-    "last_updated": "1555253855",
+    "last_updated": "1555351097",
     "milestone": null,
     "priority": null,
     "private": false,

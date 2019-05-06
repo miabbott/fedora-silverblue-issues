@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1557170568",
+    "closed_by": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    },
     "comments": [
         {
             "comment": "This is the content of /usr/lib/firewalld/zones/libvirt.xml:\r\n\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<zone target=\"ACCEPT\">\r\n  <short>libvirt</short>\r\n\r\n  <description>\r\n    The default policy of \"ACCEPT\" allows all packets to/from\r\n    interfaces in the zone to be forwarded, while the (*low priority*)\r\n    reject rule blocks any traffic destined for the host, except those\r\n    services explicitly listed (that list can be modified as required\r\n    by the local admin). This zone is intended to be used only by\r\n    libvirt virtual networks - libvirt will add the bridge devices for\r\n    all new virtual networks to this zone by default.\r\n  </description>\r\n\r\n<rule priority='32767'>\r\n  <reject/>\r\n</rule>\r\n<protocol value='icmp'/>\r\n<protocol value='ipv6-icmp'/>\r\n<service name='dhcp'/>\r\n<service name='dhcpv6'/>\r\n<service name='dns'/>\r\n<service name='ssh'/>\r\n<service name='tftp'/>\r\n</zone>\r\n",
@@ -47,11 +54,11 @@
     "date_created": "1556561456",
     "depends": [],
     "id": 15,
-    "last_updated": "1557170558",
+    "last_updated": "1557170568",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "F30: firewalld / libvirt: Failed to load zone file '/usr/lib/firewalld/zones/libvirt.xml",
     "user": {

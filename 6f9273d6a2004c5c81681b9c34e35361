@@ -109,6 +109,24 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "**Metadata Update from @fansari**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1557170809",
+            "edited_on": null,
+            "editor": null,
+            "id": 569231,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "First I pull the image:\r\n```\r\npodman pull docker.io/library/fedora:30\r\n```\r\n\r\nrootless containers:\r\n```\r\n[fansari@bat ~]$ podman run -it docker.io/library/fedora:30 /bin/bash\r\nError: slirp4netns failed\r\n```\r\nI have no idea what this is.\r\n\r\nNext I try to create a container as root:\r\n```\r\n[root@bat ~]# podman run -it docker.io/library/fedora:30 /bin/bash\r\n[root@e69c4053e45a /]# \r\n```\r\nThe creation of the container works. But if I now want to install a package this fails.\r\n```\r\n[root@e69c4053e45a /]# dnf install which\r\nFatal Python error: initfsencoding: unable to load the file system codec\r\nModuleNotFoundError: No module named 'encodings'\r\n\r\nCurrent thread 0x00007f1a4c190680 (most recent call first):\r\nAborted (core dumped)\r\n```",

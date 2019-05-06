@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1557170863",
+    "closed_by": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    },
     "comments": [
         {
             "comment": "I want to add: when I run the setsebool command I get these messages:\r\n\r\n```\r\nlibsepol.context_from_record: type pcp_plugin_exec_t is not defined\r\nlibsepol.context_from_record: could not create context structure\r\nlibsepol.context_from_string: could not create context structure\r\nlibsepol.sepol_context_to_sid: could not convert system_u:object_r:pcp_plugin_exec_t:s0 to sid\r\ninvalid context system_u:object_r:pcp_plugin_exec_t:s0\r\n```\r\n",
@@ -83,11 +90,11 @@
     "date_created": "1555253804",
     "depends": [],
     "id": 12,
-    "last_updated": "1557170859",
+    "last_updated": "1557170863",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "SELinux prevents rootless containers from running",
     "user": {

@@ -65,6 +65,25 @@
                 "fullname": "Derek Carter",
                 "name": "goozbach"
             }
+        },
+        {
+            "comment": "> Running F30, selinux enabled and enforcing.\r\n> I tried the following:\r\n> $ podman run -it hello-world\r\n> Error: slirp4netns failed\r\n> \r\n> \r\n> \r\n> And saw this in the journal:\r\n> May 05 09:10:53 polis.friocorte.com kernel: SELinux: mount invalid.  Same superblock, different security settings for (dev mqueue, type mqueue)\r\n> \r\n> \r\n> \r\n> Nothing shows up in the audit log.\r\n> If I use --net=host it works.\r\n\r\nYou can get some additional logs using `podman --log-level=debug` when running the command.\r\n\r\nThe SELinux message that you see is actually a mis-leading error; it is benign and known to appear during normal operation.  See this RHBZ - https://bugzilla.redhat.com/show_bug.cgi?id=1425278\r\n\r\nI'd suggest you take this issue to the upstream `podman` folks; they'll have a better set of knowledge to help you out - https://github.com/containers/libpod\r\n\r\n",
+            "date_created": "1557151634",
+            "edited_on": null,
+            "editor": null,
+            "id": 569130,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "miabbott@redhat.com",
+                "emails": [
+                    "miabbott@redhat.com",
+                    "micah.abbott@gmail.com"
+                ],
+                "fullname": "Micah Abbott",
+                "name": "miabbott"
+            }
         }
     ],
     "content": "First I pull the image:\r\n```\r\npodman pull docker.io/library/fedora:30\r\n```\r\n\r\nrootless containers:\r\n```\r\n[fansari@bat ~]$ podman run -it docker.io/library/fedora:30 /bin/bash\r\nError: slirp4netns failed\r\n```\r\nI have no idea what this is.\r\n\r\nNext I try to create a container as root:\r\n```\r\n[root@bat ~]# podman run -it docker.io/library/fedora:30 /bin/bash\r\n[root@e69c4053e45a /]# \r\n```\r\nThe creation of the container works. But if I now want to install a package this fails.\r\n```\r\n[root@e69c4053e45a /]# dnf install which\r\nFatal Python error: initfsencoding: unable to load the file system codec\r\nModuleNotFoundError: No module named 'encodings'\r\n\r\nCurrent thread 0x00007f1a4c190680 (most recent call first):\r\nAborted (core dumped)\r\n```",
@@ -72,7 +91,7 @@
     "date_created": "1555866929",
     "depends": [],
     "id": 14,
-    "last_updated": "1557069215",
+    "last_updated": "1557151634",
     "milestone": null,
     "priority": null,
     "private": false,

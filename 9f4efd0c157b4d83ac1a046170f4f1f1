@@ -2,18 +2,63 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "comments": [],
-    "content": "Silverblue is using [fedora-toolbox](https://github.com/debarshiray/fedora-toolbox) in order to provide access to CLI tools and a familiar development environment. Since the toolbox will be a new concept to most users, we'll need to provide some assistance to help people get started.\r\n\r\nA simple approach might be to print a helpful welcome message when someone uses the Terminal for the first time, with a link to some documentation.\r\n\r\nI think the documentation we're looking forward is a basic introduction to toolboxes - how they work, what they're good for, delivered as part of a short overview. This may be expanded later to include more detailed information.\r\n\r\nA few questions to consider:\r\n\r\n - If we only show the message the first time the Terminal is launched, how does someone find the documentation later?\r\n - What's the best way to make the documentation available? It would be good to have it both locally and online. It would also be good to be able to easily update it, since it's likely to evolve fairly quickly in the beginning.\r\n - Above I've suggested that we should print the welcome message in the prompt itself, but another option might be to show the information through the Terminal, using GTK.\r\n - It's worth considering what the opportunities are to link to other documentation around containers and container tooling.",
+    "closed_at": "1556290444",
+    "closed_by": {
+        "default_email": "aday@redhat.com",
+        "emails": [
+            "aday@redhat.com"
+        ],
+        "fullname": "Allan Day",
+        "name": "aday"
+    },
+    "comments": [
+        {
+            "comment": "This has happened now - https://github.com/debarshiray/toolbox/pull/127 , https://github.com/debarshiray/toolbox/pull/130",
+            "date_created": "1556290433",
+            "edited_on": null,
+            "editor": null,
+            "id": 567691,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "aday@redhat.com",
+                "emails": [
+                    "aday@redhat.com"
+                ],
+                "fullname": "Allan Day",
+                "name": "aday"
+            }
+        },
+        {
+            "comment": "**Metadata Update from @aday**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1556290445",
+            "edited_on": null,
+            "editor": null,
+            "id": 567692,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "aday@redhat.com",
+                "emails": [
+                    "aday@redhat.com"
+                ],
+                "fullname": "Allan Day",
+                "name": "aday"
+            }
+        }
+    ],
+    "content": "Silverblue is using [fedora-toolbox](https://github.com/debarshiray/fedora-toolbox) to provide access to CLI tools and a familiar development environment. Since the toolbox will be a new concept to most users, we'll need to provide some assistance to help people get started.\r\n\r\nA simple approach might be to print a helpful welcome message when someone uses the Terminal for the first time, with a link to some documentation.\r\n\r\nI think the documentation we're looking for is a basic introduction to toolboxes - what they are, how they work, what they're good for - delivered as part of a short overview. Then a succinct how to.\r\n\r\nA few questions to consider:\r\n\r\n - If we only show the message the first time the Terminal is launched, how does someone find the documentation later?\r\n - What's the best way to make the documentation available? It would be good to have it both locally and online. It would also be good to be able to easily update it, since it's likely to evolve fairly quickly in the beginning.\r\n - Above I've suggested that we should print the welcome message in the prompt itself, but another option might be to show the information through the Terminal, using GTK.\r\n - It's worth considering if there are opportunities to link to other documentation around containers and container tooling.",
     "custom_fields": [],
     "date_created": "1544094087",
     "depends": [],
     "id": 3,
-    "last_updated": "1544094099",
+    "last_updated": "1556290445",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "Toolbox onboarding experience",
     "user": {

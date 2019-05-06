@@ -22,6 +22,42 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "I got a hint here:\r\nhttps://github.com/containers/libpod/issues/2245#issuecomment-484153269\r\n\r\nAfter I rebased to F30 I have container-selinux-2.95-1.gite3ebc68.fc30.noarch which still has this problem.\r\n",
+            "date_created": "1555867228",
+            "edited_on": null,
+            "editor": null,
+            "id": 566682,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
+        },
+        {
+            "comment": "My temporay fix is:\r\n\r\n```\r\n[Unit]\r\nDescription=setsebool for podman\r\n\r\n[Service]\r\nType=simple\r\nExecStart=/usr/sbin/setsebool virt_sandbox_use_fusefs on\r\n\r\n[Install]\r\nWantedBy=multi-user.target\r\n```",
+            "date_created": "1555867280",
+            "edited_on": null,
+            "editor": null,
+            "id": 566683,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "I have an issue with Fedora Silverblue 29. \r\n\r\nRootless containers are preventing from starting by SELinux.\r\n\r\nThe problem started after I formatted the volume where I put my containers with xfs . With btrfs I did not have this issue (but I am not sure whether the file systems is really the problem or this might be a coincidence).\r\n\r\nWhen I do\r\n\r\n```\r\nsetsebool -P virt_sandbox_use_fusefs on\r\n```\r\nthe issue is fixed. But after a reboot this change is gone.\r\n\r\nHow can I fix this permanently (without any local oneshot systemd hack)?",
@@ -29,7 +65,7 @@
     "date_created": "1555253804",
     "depends": [],
     "id": 12,
-    "last_updated": "1555351097",
+    "last_updated": "1555867280",
     "milestone": null,
     "priority": null,
     "private": false,

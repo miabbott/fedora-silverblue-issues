@@ -1,0 +1,47 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [
+        {
+            "comment": "This is the content of /usr/lib/firewalld/zones/libvirt.xml:\r\n\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<zone target=\"ACCEPT\">\r\n  <short>libvirt</short>\r\n\r\n  <description>\r\n    The default policy of \"ACCEPT\" allows all packets to/from\r\n    interfaces in the zone to be forwarded, while the (*low priority*)\r\n    reject rule blocks any traffic destined for the host, except those\r\n    services explicitly listed (that list can be modified as required\r\n    by the local admin). This zone is intended to be used only by\r\n    libvirt virtual networks - libvirt will add the bridge devices for\r\n    all new virtual networks to this zone by default.\r\n  </description>\r\n\r\n<rule priority='32767'>\r\n  <reject/>\r\n</rule>\r\n<protocol value='icmp'/>\r\n<protocol value='ipv6-icmp'/>\r\n<service name='dhcp'/>\r\n<service name='dhcpv6'/>\r\n<service name='dns'/>\r\n<service name='ssh'/>\r\n<service name='tftp'/>\r\n</zone>\r\n",
+            "date_created": "1556562264",
+            "edited_on": null,
+            "editor": null,
+            "id": 568132,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
+        }
+    ],
+    "content": "I cannot start the KVM network with Fedora 30.\r\n\r\n```\r\n[root@bat zones]# virsh net-start default\r\nerror: Failed to start network default\r\nerror: internal error: Failed to apply firewall rules /usr/sbin/ip6tables --table filter --list-rules: ip6tables v1.8.0 (legacy): can't initialize ip6tables table `filter': Permission denied\r\nPerhaps ip6tables or your kernel needs to be upgraded.\r\n\r\n\r\n[root@bat zones]# systemctl status firewalld\r\n\u25cf firewalld.service - firewalld - dynamic firewall daemon\r\n   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)\r\n   Active: active (running) since Mon 2019-04-29 20:08:06 CEST; 14s ago\r\n     Docs: man:firewalld(1)\r\n Main PID: 9282 (firewalld)\r\n    Tasks: 2 (limit: 4915)\r\n   Memory: 22.8M\r\n   CGroup: /system.slice/firewalld.service\r\n           \u2514\u25009282 /usr/bin/python3 /usr/sbin/firewalld --nofork --nopid\r\n\r\nApr 29 20:08:06 bat.localdomain systemd[1]: Starting firewalld - dynamic firewall daemon...\r\nApr 29 20:08:06 bat.localdomain systemd[1]: Started firewalld - dynamic firewall daemon.\r\nApr 29 20:08:06 bat.localdomain firewalld[9282]: ERROR: Failed to load zone file '/usr/lib/firewalld/zones/libvirt.xml': PARSE_ERROR: rule: Unexpected attribute priority\r\n```\r\n",
+    "custom_fields": [],
+    "date_created": "1556561456",
+    "depends": [],
+    "id": 15,
+    "last_updated": "1556562264",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "F30: firewalld / libvirt: Failed to load zone file '/usr/lib/firewalld/zones/libvirt.xml",
+    "user": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    }
+}

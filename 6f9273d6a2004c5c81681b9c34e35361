@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1557170809",
+    "closed_by": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    },
     "comments": [
         {
             "comment": "Also I want to mention that already existing F29 containers fail to start.\r\n\r\n```\r\ncannot start a container that has stopped\r\nError: unable to start container \"ldap\": `/usr/bin/runc start 8158db0aae5a51f6341bbe2061220d12177da61ac64440862a53289f39c06466` failed: exit status 1\r\n```\r\n\r\nSo from my point of view containers are completely broken in F30.\r\n\r\n",
@@ -109,11 +116,11 @@
     "date_created": "1555866929",
     "depends": [],
     "id": 14,
-    "last_updated": "1557170508",
+    "last_updated": "1557170809",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "Cannot create/use containers in Fedora 30",
     "user": {

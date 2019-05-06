@@ -1,0 +1,90 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [
+        {
+            "comment": "Also I want to mention that already existing F29 containers fail to start.\r\n\r\n```\r\ncannot start a container that has stopped\r\nError: unable to start container \"ldap\": `/usr/bin/runc start 8158db0aae5a51f6341bbe2061220d12177da61ac64440862a53289f39c06466` failed: exit status 1\r\n```\r\n\r\nSo from my point of view containers are completely broken in F30.\r\n\r\n",
+            "date_created": "1555867457",
+            "edited_on": null,
+            "editor": null,
+            "id": 566684,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
+        },
+        {
+            "comment": "I found the first working way to install a container:\r\n\r\n```\r\npodman pull registry.fedoraproject.org/fedora:30\r\nsetenforce 0\r\npodman run -it registry.fedoraproject.org/fedora:30 /bin/bash\r\ndnf install which\r\n```\r\nThis way it is working.\r\n\r\nTrying the same thing from docker.io/library/fedora:30 end with a segmentation fault.\r\n\r\n```\r\n[root@bat system]# podman run -it docker.io/library/fedora:30 /bin/bash\r\n[root@d36279f3e5c6 /]# dnf install which\r\nFedora Modular 30 - x86_64                                                                                                                                                                                    1.8 MB/s | 2.1 MB     00:01    \r\nFedora Modular 30 - x86_64 - Updates                                                                                                                                                                          234  B/s | 257  B     00:01    \r\nFedora Modular 30 - x86_64 - Test Updates                                                                                                                                                                     2.0 MB/s | 2.9 MB     00:01    \r\nFedora 30 - x86_64 - Test Updates                                                                                                                                                                             7.7 MB/s |  16 MB     00:02    \r\nFedora 30 - x86_64 - Updates                                                                                                                                                                                  275  B/s | 257  B     00:00    \r\nSegmentation fault (core dumped)                                                                    75% [==========================================================================-                        ]  42 kB/s |  15 kB     00:00 E\r\n```\r\n\r\nNow I go back to the container from registry.fedoraproject.org/fedora:30 but enter enforcing mode.\r\n\r\n```\r\n[root@bat system]# setenforce 1\r\n[root@bat system]# podman exec -it friendly_hoover /bin/bash\r\n[root@bc0a6e382f42 /]# dnf install procps-ng\r\nFatal Python error: initfsencoding: unable to load the file system codec\r\nModuleNotFoundError: No module named 'encodings'\r\n\r\nCurrent thread 0x00007fa755059680 (most recent call first):\r\nAborted (core dumped)\r\n```\r\nThis is what I see in the audit.log:\r\n\r\n```\r\ntype=USER_AVC msg=audit(1555868827.236:567): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='avc:  received setenforce notice (enforcing=1)  exe=\"/usr/lib/systemd/systemd\" sauid=0 hostname=? addr=? terminal=?'UID=\"root\" AUID=\"unset\" SAUID=\"root\"\r\ntype=ANOM_ABEND msg=audit(1555868840.781:568): auid=1000 uid=0 gid=0 ses=3 subj=system_u:system_r:container_t:s0:c144,c560 pid=14232 comm=\"dnf\" exe=\"/usr/bin/python3.7\" sig=6 res=1AUID=\"fansari\" UID=\"root\" GID=\"root\"\r\ntype=SERVICE_START msg=audit(1555868840.794:569): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=systemd-coredump@11-14233-0 comm=\"systemd\" exe=\"/usr/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'UID=\"root\" AUID=\"unset\"\r\ntype=SERVICE_STOP msg=audit(1555868841.003:570): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=systemd-coredump@11-14233-0 comm=\"systemd\" exe=\"/usr/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'UID=\"root\" AUID=\"unset\"\r\n```",
+            "date_created": "1555869006",
+            "edited_on": "1555869792",
+            "editor": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            },
+            "id": 566685,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
+        },
+        {
+            "comment": "Running F30, selinux enabled and enforcing.\r\n\r\nI tried the following:\r\n\r\n    $ podman run -it hello-world\r\n    Error: slirp4netns failed\r\n\r\nAnd saw this in the journal:\r\n\r\n    May 05 09:10:53 polis.friocorte.com kernel: SELinux: mount invalid.  Same superblock, different security settings for (dev mqueue, type mqueue)\r\n\r\nNothing shows up in the audit log.\r\n\r\nIf I use `--net=host` it works.\r\n",
+            "date_created": "1557069215",
+            "edited_on": null,
+            "editor": null,
+            "id": 568968,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "goozbach@friocorte.com",
+                "emails": [
+                    "goozbach@friocorte.com"
+                ],
+                "fullname": "Derek Carter",
+                "name": "goozbach"
+            }
+        }
+    ],
+    "content": "First I pull the image:\r\n```\r\npodman pull docker.io/library/fedora:30\r\n```\r\n\r\nrootless containers:\r\n```\r\n[fansari@bat ~]$ podman run -it docker.io/library/fedora:30 /bin/bash\r\nError: slirp4netns failed\r\n```\r\nI have no idea what this is.\r\n\r\nNext I try to create a container as root:\r\n```\r\n[root@bat ~]# podman run -it docker.io/library/fedora:30 /bin/bash\r\n[root@e69c4053e45a /]# \r\n```\r\nThe creation of the container works. But if I now want to install a package this fails.\r\n```\r\n[root@e69c4053e45a /]# dnf install which\r\nFatal Python error: initfsencoding: unable to load the file system codec\r\nModuleNotFoundError: No module named 'encodings'\r\n\r\nCurrent thread 0x00007f1a4c190680 (most recent call first):\r\nAborted (core dumped)\r\n```",
+    "custom_fields": [],
+    "date_created": "1555866929",
+    "depends": [],
+    "id": 14,
+    "last_updated": "1557069215",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "Cannot create/use containers in Fedora 30",
+    "user": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    }
+}

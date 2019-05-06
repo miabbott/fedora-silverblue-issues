@@ -47,6 +47,24 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "**Metadata Update from @fansari**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1557170569",
+            "edited_on": null,
+            "editor": null,
+            "id": 569227,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "I cannot start the KVM network with Fedora 30.\r\n\r\n```\r\n[root@bat zones]# virsh net-start default\r\nerror: Failed to start network default\r\nerror: internal error: Failed to apply firewall rules /usr/sbin/ip6tables --table filter --list-rules: ip6tables v1.8.0 (legacy): can't initialize ip6tables table `filter': Permission denied\r\nPerhaps ip6tables or your kernel needs to be upgraded.\r\n\r\n\r\n[root@bat zones]# systemctl status firewalld\r\n\u25cf firewalld.service - firewalld - dynamic firewall daemon\r\n   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)\r\n   Active: active (running) since Mon 2019-04-29 20:08:06 CEST; 14s ago\r\n     Docs: man:firewalld(1)\r\n Main PID: 9282 (firewalld)\r\n    Tasks: 2 (limit: 4915)\r\n   Memory: 22.8M\r\n   CGroup: /system.slice/firewalld.service\r\n           \u2514\u25009282 /usr/bin/python3 /usr/sbin/firewalld --nofork --nopid\r\n\r\nApr 29 20:08:06 bat.localdomain systemd[1]: Starting firewalld - dynamic firewall daemon...\r\nApr 29 20:08:06 bat.localdomain systemd[1]: Started firewalld - dynamic firewall daemon.\r\nApr 29 20:08:06 bat.localdomain firewalld[9282]: ERROR: Failed to load zone file '/usr/lib/firewalld/zones/libvirt.xml': PARSE_ERROR: rule: Unexpected attribute priority\r\n```\r\n",
@@ -54,7 +72,7 @@
     "date_created": "1556561456",
     "depends": [],
     "id": 15,
-    "last_updated": "1557170568",
+    "last_updated": "1557170569",
     "milestone": null,
     "priority": null,
     "private": false,

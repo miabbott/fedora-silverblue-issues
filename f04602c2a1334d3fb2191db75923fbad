@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1557170787",
+    "closed_by": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    },
     "comments": [
         {
             "comment": "OK - this is unimportant. For data exchange I can attach a container volume.\r\n",
@@ -22,6 +29,24 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "**Metadata Update from @fansari**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1557170788",
+            "edited_on": null,
+            "editor": null,
+            "id": 569230,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "This is also Fedora 29 Sliverblue.\r\n\r\npodman-1.2.0-2.git3bd528e.fc29.x86_64\r\n\r\nWhen I try to mount a rootless container I get this error message:\r\n```\r\nError: cannot mount using driver overlay in rootless mode\r\n```\r\n",
@@ -29,11 +54,11 @@
     "date_created": "1555351322",
     "depends": [],
     "id": 13,
-    "last_updated": "1557170782",
+    "last_updated": "1557170788",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "Cannot mount rootless container",
     "user": {

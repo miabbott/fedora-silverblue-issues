@@ -58,6 +58,24 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "I have reinstalled my system. This does not appear anymore.\r\n",
+            "date_created": "1557170859",
+            "edited_on": null,
+            "editor": null,
+            "id": 569232,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "I have an issue with Fedora Silverblue 29. \r\n\r\nRootless containers are preventing from starting by SELinux.\r\n\r\nThe problem started after I formatted the volume where I put my containers with xfs . With btrfs I did not have this issue (but I am not sure whether the file systems is really the problem or this might be a coincidence).\r\n\r\nWhen I do\r\n\r\n```\r\nsetsebool -P virt_sandbox_use_fusefs on\r\n```\r\nthe issue is fixed. But after a reboot this change is gone.\r\n\r\nHow can I fix this permanently (without any local oneshot systemd hack)?",
@@ -65,7 +83,7 @@
     "date_created": "1555253804",
     "depends": [],
     "id": 12,
-    "last_updated": "1555867280",
+    "last_updated": "1557170859",
     "milestone": null,
     "priority": null,
     "private": false,

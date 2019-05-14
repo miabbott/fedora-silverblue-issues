@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "Both could be useful for an immutable distribution",
+    "custom_fields": [],
+    "date_created": "1557836192",
+    "depends": [],
+    "id": 16,
+    "last_updated": "1557836192",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "Are there any means to mount to /nix or /snap ?",
+    "user": {
+        "default_email": "abvit89@gmail.com",
+        "emails": [
+            "abvit89@gmail.com"
+        ],
+        "fullname": "pwtail",
+        "name": "pwtail"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "I was able to install nvidia drivers successfully in Silverblue 30.\r\n\r\nI was able to complete install with fedora\u2019s \u201cfedora-workstation-repositories\u201d by enabling \u201crpmfusion-nonfree-nvidia-driver.repo\u201d. Then, \" rpm-ostree install kmod-nvidia xorg-x11-drv-nvidia\". And finally, use the same kargs from Alex\u2019s nvidia blog post. Worked well. I have not noticed any performance issues.\r\n\r\nThe issue:\r\n\r\nAfter I did a general system upgrade that included an update to the kernal, the akmod no longer worked! I am not sure why the akmod post-scripts didnt execute after kernal update. I havnt found a \u201creal\u201d solution to this problem: my uneducated workaround was to uninstall/install the two nvidia packages, which worked for me.\r\n\r\n<!!image>\r\n",
+    "custom_fields": [],
+    "date_created": "1558016840",
+    "depends": [],
+    "id": 18,
+    "last_updated": "1558016840",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "nvidia kmod + kernel upgrade",
+    "user": {
+        "default_email": "barn.lewis@protonmail.com",
+        "emails": [
+            "barn.lewis@protonmail.com"
+        ],
+        "fullname": "barnabas lewis",
+        "name": "barn"
+    }
+}

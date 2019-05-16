@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "Running Silverblue 30.\r\n\r\nI have a couple docker containers running OpenVPN.\r\n\r\nWhenever I power on or restart machine, docker has issues accessing /dev/net/tun and the containers fail to properly start.\r\n\r\nMy workaround is to modprobe tun, and then restart containers.\r\n\r\nI did not have this issue on non-ostree Fedora 29.",
+    "custom_fields": [],
+    "date_created": "1558016336",
+    "depends": [],
+    "id": 17,
+    "last_updated": "1558016336",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "Docker + tun ",
+    "user": {
+        "default_email": "barn.lewis@protonmail.com",
+        "emails": [
+            "barn.lewis@protonmail.com"
+        ],
+        "fullname": "barnabas lewis",
+        "name": "barn"
+    }
+}

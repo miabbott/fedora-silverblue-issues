@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1558029876",
+    "closed_by": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    },
     "comments": [
         {
             "comment": "The package you use should be `toolbox` (in the repos). I believe `fedora-toolbox` is deprecated.",
@@ -83,11 +90,11 @@
     "date_created": "1553882374",
     "depends": [],
     "id": 9,
-    "last_updated": "1558029871",
+    "last_updated": "1558029876",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "fedora-toolbox create error",
     "user": {

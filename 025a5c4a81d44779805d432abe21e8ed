@@ -4,13 +4,33 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
-    "content": "I was able to install nvidia drivers successfully in Silverblue 30.\r\n\r\nI was able to complete install with fedora\u2019s \u201cfedora-workstation-repositories\u201d by enabling \u201crpmfusion-nonfree-nvidia-driver.repo\u201d. Then, \" rpm-ostree install kmod-nvidia xorg-x11-drv-nvidia\". And finally, use the same kargs from Alex\u2019s nvidia blog post. Worked well. I have not noticed any performance issues.\r\n\r\nThe issue:\r\n\r\nAfter I did a general system upgrade that included an update to the kernal, the akmod no longer worked! I am not sure why the akmod post-scripts didnt execute after kernal update. I havnt found a \u201creal\u201d solution to this problem: my uneducated workaround was to uninstall/install the two nvidia packages, which worked for me.\r\n\r\n<!!image>\r\n",
+    "comments": [
+        {
+            "comment": "@alexl - any idea?\r\n",
+            "date_created": "1558376693",
+            "edited_on": null,
+            "editor": null,
+            "id": 571156,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
+        }
+    ],
+    "content": "I was able to install nvidia drivers successfully in Silverblue 30.\r\n\r\nI was able to complete install with fedora\u2019s \u201cfedora-workstation-repositories\u201d by enabling \u201crpmfusion-nonfree-nvidia-driver.repo\u201d. Then, \" rpm-ostree install kmod-nvidia xorg-x11-drv-nvidia\". And finally, use the same kargs from Alex\u2019s nvidia blog post. Worked well. I have not noticed any performance issues.\r\n\r\nThe issue:\r\n\r\nAfter I did a general system upgrade that included an update to the kernal, the akmod no longer worked! I am not sure why the akmod post-scripts didnt execute after kernal update. I havnt found a \u201creal\u201d solution to this problem: my uneducated workaround was to uninstall/install the two nvidia packages, which worked for me.\r\n\r\n[![4FA2B47A-A230-48C3-836E-6A1AE93279AA.png](/fedora-silverblue/issue/raw/files/396b5e574eaddb61db162685b157b695200d3a2e25e9a4a44a31e1ba32f4a79e-4FA2B47A-A230-48C3-836E-6A1AE93279AA.png)](/fedora-silverblue/issue/raw/files/396b5e574eaddb61db162685b157b695200d3a2e25e9a4a44a31e1ba32f4a79e-4FA2B47A-A230-48C3-836E-6A1AE93279AA.png)\r\n",
     "custom_fields": [],
     "date_created": "1558016840",
     "depends": [],
     "id": 18,
-    "last_updated": "1558016840",
+    "last_updated": "1558376693",
     "milestone": null,
     "priority": null,
     "private": false,

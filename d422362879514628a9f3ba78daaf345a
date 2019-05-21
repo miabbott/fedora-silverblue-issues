@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "I will link this discussion here. Seems that the config of grub2 is either intended or somehow incorrect.\r\n\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1712137\r\n",
+    "custom_fields": [],
+    "date_created": "1558464689",
+    "depends": [],
+    "id": 19,
+    "last_updated": "1558464689",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "grub2: menu",
+    "user": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    }
+}

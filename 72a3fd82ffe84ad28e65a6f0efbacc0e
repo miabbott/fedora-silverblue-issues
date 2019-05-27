@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1558920295",
+    "closed_by": {
+        "default_email": "hotgalan@gmail.com",
+        "emails": [
+            "hotgalan@gmail.com"
+        ],
+        "fullname": "Alberto Rodriguez Sanchez",
+        "name": "bt0dotninja"
+    },
     "comments": [
         {
             "comment": "@bt0dotninja Is this still an issue you need open? I am working on migrating these issues over to GitHub issue tracker for Silverblue. I would like to close this if it is Okay with you, otherwise I will move it over.",
@@ -29,11 +36,11 @@
     "date_created": "1537040462",
     "depends": [],
     "id": 1,
-    "last_updated": "1558625719",
+    "last_updated": "1558920295",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "Fedora 29 Talking points",
     "user": {

@@ -29,6 +29,24 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "**Metadata Update from @fansari**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1559073913",
+            "edited_on": null,
+            "editor": null,
+            "id": 572785,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "I will link this discussion here. Seems that the config of grub2 is either intended or somehow incorrect.\r\n\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1712137\r\n",
@@ -36,7 +54,7 @@
     "date_created": "1558464689",
     "depends": [],
     "id": 19,
-    "last_updated": "1559073911",
+    "last_updated": "1559073913",
     "milestone": null,
     "priority": null,
     "private": false,

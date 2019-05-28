@@ -29,6 +29,24 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "**Metadata Update from @fansari**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1559073762",
+            "edited_on": null,
+            "editor": null,
+            "id": 572783,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "As I have discussed here:\r\n\r\nhttps://discussion.fedoraproject.org/t/getting-rid-of-grub/1816\r\n\r\nsystemd-boot support for Fedora SB is very bad.\r\n\r\nIt was not clear to me right from the beginning that setting up the /boot partition with vfat would end up with a system you cannot update anymore because ostree does not like this.\r\n\r\nOn the other hand with any other filesystem (ext4, xfs) the UEFI cannot read the kernel. This was something clear to me that kernel and initrd have both to be placed on a vfat partition.\r\n\r\nMeanwhile I have setup some test installation putting kernel and initrd into /boot/efi but this is not maintained by the update process.\r\n",

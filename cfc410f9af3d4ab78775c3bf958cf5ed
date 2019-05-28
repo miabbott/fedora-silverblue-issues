@@ -1,0 +1,28 @@
+{
+    "assignee": null,
+    "blocks": [],
+    "close_status": null,
+    "closed_at": null,
+    "closed_by": null,
+    "comments": [],
+    "content": "I did not found an explanation so far how I could do IPv6 with podman.\r\n\r\nIn /etc/cni/net.d there is a file I can change - but putting IPv6 stuff in there did not work.\r\n",
+    "custom_fields": [],
+    "date_created": "1559074064",
+    "depends": [],
+    "id": 21,
+    "last_updated": "1559074064",
+    "milestone": null,
+    "priority": null,
+    "private": false,
+    "status": "Open",
+    "tags": [],
+    "title": "podman and IPv6",
+    "user": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    }
+}

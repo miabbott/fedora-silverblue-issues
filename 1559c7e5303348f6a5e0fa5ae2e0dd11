@@ -2,8 +2,15 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1559073762",
+    "closed_by": {
+        "default_email": "mail@frank-ansari.de",
+        "emails": [
+            "mail@frank-ansari.de"
+        ],
+        "fullname": "Frank Ansari",
+        "name": "fansari"
+    },
     "comments": [
         {
             "comment": "After I read some comments on bugzilla it seems that Fedora will not support different boot loader. Although the user can install systemd-boot if he wants to.\r\n\r\nThe script I suggested (see the link above) is enough for me to maintain my setup.\r\n\r\nSo I guess since Fedora will stick to grub nothing more could be done.\r\n",
@@ -29,11 +36,11 @@
     "date_created": "1558895890",
     "depends": [],
     "id": 20,
-    "last_updated": "1559073757",
+    "last_updated": "1559073762",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "poor integration of systemd-boot",
     "user": {

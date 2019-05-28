@@ -4,13 +4,32 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
+    "comments": [
+        {
+            "comment": "There was a fix suggested but it is always overwritten after a new update.\r\n\r\nFrom my side I say what  I always say regarding this topic: on an UEFI system (today I guess this is almost all PCs) you don't need grub.\r\n\r\nI have replaced it and that's it for me.\r\n\r\nhttps://discussion.fedoraproject.org/t/getting-rid-of-grub/1816/9\r\n",
+            "date_created": "1559073907",
+            "edited_on": null,
+            "editor": null,
+            "id": 572784,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
+        }
+    ],
     "content": "I will link this discussion here. Seems that the config of grub2 is either intended or somehow incorrect.\r\n\r\nhttps://bugzilla.redhat.com/show_bug.cgi?id=1712137\r\n",
     "custom_fields": [],
     "date_created": "1558464689",
     "depends": [],
     "id": 19,
-    "last_updated": "1558464689",
+    "last_updated": "1559073907",
     "milestone": null,
     "priority": null,
     "private": false,

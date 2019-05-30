@@ -47,6 +47,25 @@
                 "fullname": "Frank Ansari",
                 "name": "fansari"
             }
+        },
+        {
+            "comment": "Thanks for the investigation you've done here! But yes, I think this is best closed - supporting GRUB is hard enough - trying to support GRUB and something in addition, even harder. So, any replacement worth putting effort into would have to be part of a plan to at least eventually replace GRUB entirely.\r\n\r\nThe reason that OSTree doesn't like VFAT is it doesn't allow standard UNIX tricks for atomic changes - there is inevitably an intermediate state where the configuration is corrupt, and if power failure (etc.) occurred at that point, the result would be broken.",
+            "date_created": "1559241644",
+            "edited_on": null,
+            "editor": null,
+            "id": 573207,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
         }
     ],
     "content": "As I have discussed here:\r\n\r\nhttps://discussion.fedoraproject.org/t/getting-rid-of-grub/1816\r\n\r\nsystemd-boot support for Fedora SB is very bad.\r\n\r\nIt was not clear to me right from the beginning that setting up the /boot partition with vfat would end up with a system you cannot update anymore because ostree does not like this.\r\n\r\nOn the other hand with any other filesystem (ext4, xfs) the UEFI cannot read the kernel. This was something clear to me that kernel and initrd have both to be placed on a vfat partition.\r\n\r\nMeanwhile I have setup some test installation putting kernel and initrd into /boot/efi but this is not maintained by the update process.\r\n",
@@ -54,7 +73,7 @@
     "date_created": "1558895890",
     "depends": [],
     "id": 20,
-    "last_updated": "1559073762",
+    "last_updated": "1559241644",
     "milestone": null,
     "priority": null,
     "private": false,

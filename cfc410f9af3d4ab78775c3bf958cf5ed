@@ -12,13 +12,33 @@
         "fullname": "Owen Taylor",
         "name": "otaylor"
     },
-    "comments": [],
+    "comments": [
+        {
+            "comment": "**Metadata Update from @otaylor**:\n- Issue status updated to: Closed (was: Open)",
+            "date_created": "1559241023",
+            "edited_on": null,
+            "editor": null,
+            "id": 573204,
+            "notification": true,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
+        }
+    ],
     "content": "I did not found an explanation so far how I could do IPv6 with podman.\r\n\r\nIn /etc/cni/net.d there is a file I can change - but putting IPv6 stuff in there did not work.\r\n",
     "custom_fields": [],
     "date_created": "1559074064",
     "depends": [],
     "id": 21,
-    "last_updated": "1559241022",
+    "last_updated": "1559241023",
     "milestone": null,
     "priority": null,
     "private": false,

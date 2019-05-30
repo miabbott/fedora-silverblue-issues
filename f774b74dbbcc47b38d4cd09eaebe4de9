@@ -4,13 +4,33 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
+    "comments": [
+        {
+            "comment": "Do you think you could test in a F30 vm? This could be Silverblue/rpm-ostree or F30 - hard for me to guess.",
+            "date_created": "1559241183",
+            "edited_on": null,
+            "editor": null,
+            "id": 573206,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
+        }
+    ],
     "content": "Running Silverblue 30.\r\n\r\nI have a couple docker containers running OpenVPN.\r\n\r\nWhenever I power on or restart machine, docker has issues accessing /dev/net/tun and the containers fail to properly start.\r\n\r\nMy workaround is to modprobe tun, and then restart containers.\r\n\r\nI did not have this issue on non-ostree Fedora 29.",
     "custom_fields": [],
     "date_created": "1558016336",
     "depends": [],
     "id": 17,
-    "last_updated": "1558016336",
+    "last_updated": "1559241183",
     "milestone": null,
     "priority": null,
     "private": false,

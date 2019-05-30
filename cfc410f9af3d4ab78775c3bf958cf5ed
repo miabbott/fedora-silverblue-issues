@@ -31,6 +31,25 @@
                 "fullname": "Owen Taylor",
                 "name": "otaylor"
             }
+        },
+        {
+            "comment": "https://github.com/containers/libpod/issues would be better.\r\n\r\nhttps://blog.42.be/2019/03/routable-ipv6-containers-with-podman.html\r\n\r\nlooks relevant.\r\n\r\nThanks!",
+            "date_created": "1559241077",
+            "edited_on": null,
+            "editor": null,
+            "id": 573205,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
         }
     ],
     "content": "I did not found an explanation so far how I could do IPv6 with podman.\r\n\r\nIn /etc/cni/net.d there is a file I can change - but putting IPv6 stuff in there did not work.\r\n",
@@ -38,7 +57,7 @@
     "date_created": "1559074064",
     "depends": [],
     "id": 21,
-    "last_updated": "1559241023",
+    "last_updated": "1559241077",
     "milestone": null,
     "priority": null,
     "private": false,

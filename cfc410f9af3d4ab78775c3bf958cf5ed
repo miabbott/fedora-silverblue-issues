@@ -2,19 +2,27 @@
     "assignee": null,
     "blocks": [],
     "close_status": null,
-    "closed_at": null,
-    "closed_by": null,
+    "closed_at": "1559241022",
+    "closed_by": {
+        "default_email": "otaylor@redhat.com",
+        "emails": [
+            "otaylor@fishsoup.net",
+            "otaylor@redhat.com"
+        ],
+        "fullname": "Owen Taylor",
+        "name": "otaylor"
+    },
     "comments": [],
     "content": "I did not found an explanation so far how I could do IPv6 with podman.\r\n\r\nIn /etc/cni/net.d there is a file I can change - but putting IPv6 stuff in there did not work.\r\n",
     "custom_fields": [],
     "date_created": "1559074064",
     "depends": [],
     "id": 21,
-    "last_updated": "1559074064",
+    "last_updated": "1559241022",
     "milestone": null,
     "priority": null,
     "private": false,
-    "status": "Open",
+    "status": "Closed",
     "tags": [],
     "title": "podman and IPv6",
     "user": {

@@ -66,6 +66,24 @@
                 "fullname": "Owen Taylor",
                 "name": "otaylor"
             }
+        },
+        {
+            "comment": "My problem is: I have no knowledge on OSTree. After I played a little bit around with Silverblue my ostree got into a state where no update command where working and \"rpm-ostree status\" did not work and gave a timeout error. I don't even know how to rescue such a system. The normal way with chroot and afterwards making binds for /dev /sys and /proc does not work.\r\n\r\nWhat I mean is:I don't know how many people are out there who will be able to hack OSTree if something goes wrong. In my case the only thing I could do was to reinstall my PC. \r\n",
+            "date_created": "1559317314",
+            "edited_on": null,
+            "editor": null,
+            "id": 573347,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "mail@frank-ansari.de",
+                "emails": [
+                    "mail@frank-ansari.de"
+                ],
+                "fullname": "Frank Ansari",
+                "name": "fansari"
+            }
         }
     ],
     "content": "As I have discussed here:\r\n\r\nhttps://discussion.fedoraproject.org/t/getting-rid-of-grub/1816\r\n\r\nsystemd-boot support for Fedora SB is very bad.\r\n\r\nIt was not clear to me right from the beginning that setting up the /boot partition with vfat would end up with a system you cannot update anymore because ostree does not like this.\r\n\r\nOn the other hand with any other filesystem (ext4, xfs) the UEFI cannot read the kernel. This was something clear to me that kernel and initrd have both to be placed on a vfat partition.\r\n\r\nMeanwhile I have setup some test installation putting kernel and initrd into /boot/efi but this is not maintained by the update process.\r\n",
@@ -73,7 +91,7 @@
     "date_created": "1558895890",
     "depends": [],
     "id": 20,
-    "last_updated": "1559241644",
+    "last_updated": "1559317314",
     "milestone": null,
     "priority": null,
     "private": false,

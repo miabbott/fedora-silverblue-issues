@@ -4,13 +4,33 @@
     "close_status": null,
     "closed_at": null,
     "closed_by": null,
-    "comments": [],
-    "content": "If I start \"screen\" inside of toolbox the output is gargabe.\r\n\r\nThis happens also when my ~/.screenrc is empty.\r\n\r\nTERM=linux\r\n\r\nHere some output of \"ls -l\".\r\n\r\n```\r\nansari fansari   30 Dec  7 21:20  usr                                                                                 \r\n                                     drwxrwxr-x.   2 fansari fansari   48 Jul 14  2018  vagrant                       \r\n                                                                                               -rw-rw-r--.   1 fansari\r\n fansari 3269 Jul 15  2018  Vagrantfile                                                                               \r\n                                       drwx------.  55 fansari fansari 4096 Apr  8  2018  vanessa                     \r\n                                                                                                 drwxr-xr-x.   4 fansa\r\nri fansari   32 May  6 18:30  Videos                                                                                  \r\n                                    drwxrwxr-x.   3 fansari fansari   87 Oct 31  2015  vmware                         \r\n                                                                                             drwxrwxr-x.   4 fansari f\r\nansari   39 Apr 23  2018  WebstormProjects                                                                            \r\n                                          drwxrwxr-x.   7 fansari fansari   89 Dec 31  2017  workspace                \r\n                                                                                                      drwxrwxr-x.   2 \r\nfansari fansari  259 Dec 23 15:13  X-Air                                                                              \r\n                                        drwxrwxr-x.   4 fansari fansari   36 Jul  3  2018  zabbix                     \r\n                                                                                                 \u2b22[fansari@toolbox ~]$\r\n```",
+    "comments": [
+        {
+            "comment": "Could you refile at https://github.com/debarshiray/toolbox/issues ? Thanks!",
+            "date_created": "1559573043",
+            "edited_on": null,
+            "editor": null,
+            "id": 573693,
+            "notification": false,
+            "parent": null,
+            "reactions": {},
+            "user": {
+                "default_email": "otaylor@redhat.com",
+                "emails": [
+                    "otaylor@fishsoup.net",
+                    "otaylor@redhat.com"
+                ],
+                "fullname": "Owen Taylor",
+                "name": "otaylor"
+            }
+        }
+    ],
+    "content": "If I start \"screen\" inside of toolbox the output is gargabe.\r\n\r\nThis happens also when my ~/.screenrc is empty.\r\n\r\nTERM=linux\r\n\r\nWtih TERM=ansi it is the same issue.\r\n\r\nHere some output of \"ls -l\".\r\n\r\n```\r\nansari fansari   30 Dec  7 21:20  usr                                                                                 \r\n                                     drwxrwxr-x.   2 fansari fansari   48 Jul 14  2018  vagrant                       \r\n                                                                                               -rw-rw-r--.   1 fansari\r\n fansari 3269 Jul 15  2018  Vagrantfile                                                                               \r\n                                       drwx------.  55 fansari fansari 4096 Apr  8  2018  vanessa                     \r\n                                                                                                 drwxr-xr-x.   4 fansa\r\nri fansari   32 May  6 18:30  Videos                                                                                  \r\n                                    drwxrwxr-x.   3 fansari fansari   87 Oct 31  2015  vmware                         \r\n                                                                                             drwxrwxr-x.   4 fansari f\r\nansari   39 Apr 23  2018  WebstormProjects                                                                            \r\n                                          drwxrwxr-x.   7 fansari fansari   89 Dec 31  2017  workspace                \r\n                                                                                                      drwxrwxr-x.   2 \r\nfansari fansari  259 Dec 23 15:13  X-Air                                                                              \r\n                                        drwxrwxr-x.   4 fansari fansari   36 Jul  3  2018  zabbix                     \r\n                                                                                                 \u2b22[fansari@toolbox ~]$\r\n```",
     "custom_fields": [],
     "date_created": "1559491048",
     "depends": [],
     "id": 22,
-    "last_updated": "1559491259",
+    "last_updated": "1559573043",
     "milestone": null,
     "priority": null,
     "private": false,
